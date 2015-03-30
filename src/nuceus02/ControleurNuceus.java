@@ -41,7 +41,7 @@ public class ControleurNuceus extends HttpServlet {
 			getServletContext().getRequestDispatcher("/WEB-INF/vues/vueListe.jsp").forward(request,response);
 		}
 		else if(action.equals("renseignerAjout")){
-			getServletContext().getRequestDispatcher("/WEB-INF/vues/vueForumlaireAjout.jsp");
+			getServletContext().getRequestDispatcher("/WEB-INF/vues/vueFormulaireAjout.jsp").forward(request,response);
 		}
 		else if(action.equals("ajouter")){
 			String libelle = request.getParameter("libelle");
@@ -58,7 +58,10 @@ public class ControleurNuceus extends HttpServlet {
 			boolean ajoutOk = metierVarietes.ajouter(new Variete(libelle,aocObtenu));
 			
 			if(ajoutOk == true){
-				getServletContext().getRequestDispatcher("/WEB-INF/vues/vueResultatAjout.jsp");
+				getServletContext().getRequestDispatcher("/WEB-INF/vues/vueResultatAjout.jsp").forward(request, response);
+			}
+			else{
+				getServletContext().getRequestDispatcher("/WEB-INF/vues/vueResultatAjout.jsp").forward(request, response);
 			}
 		}
 	}

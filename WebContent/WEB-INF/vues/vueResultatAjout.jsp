@@ -1,3 +1,5 @@
+<%@ page import="java.util.*"%>
+<%@ page import="nuceus02.*"%>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -5,12 +7,13 @@
 </head>
 
 <%
+	Variete varietes = (Variete)request.getAttribute("variete");
 	String libelle = (String)request.getAttribute("libelle");
 	String aoc = (String)request.getAttribute("aoc");
 %>
 <body>
-	Libellé = <%= libelle %> </br>
-	Aoc : <%= aoc %> </br>
-	<a href="?action = visualiser">
+	Libellé = <%= libelle %>
+	Aoc : <%= aoc %>
+	<a href="?action = visualiser"></a>
 </body>
 </html>
